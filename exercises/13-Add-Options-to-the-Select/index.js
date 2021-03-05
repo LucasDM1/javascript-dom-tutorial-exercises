@@ -4,8 +4,12 @@ window.onload = function() {
 
 	// your code here
 	countries.forEach(element => {
-		let elem = document.createElement("OPTION");
-		elem.innerHTML = element;
-		document.querySelector("#mySelect").appendChild(elem);
+		var elem = document.createElement("option"); //<option></option>
+		elem.innerHTML = element; //<option> USA </option>
+		document.querySelector("#mySelect").appendChild(elem); //<selection id=#mySelect><option> USA </option></selection>
+	});
+	let selector = document.querySelector("#mySelect"); //<select></select>
+	selector.addEventListener("change", function() {
+		alert(selector.value);
 	});
 };
